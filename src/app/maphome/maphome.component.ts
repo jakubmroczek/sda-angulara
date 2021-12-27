@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { ArticleListConfig, TagsService, UserService } from '../core';
 
+import { DataSetService, Dataset } from '../core'
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './maphome.component.html',
@@ -12,7 +14,10 @@ export class MaphomeComponent implements OnInit {
   constructor(
     private router: Router,
     private tagsService: TagsService,
-    private userService: UserService
+    private userService: UserService,
+
+    // new stuff
+    private dataSetService: DataSetService
   ) {}
 
   isAuthenticated: boolean;
@@ -23,25 +28,34 @@ export class MaphomeComponent implements OnInit {
   tags: Array<string> = [];
   tagsLoaded = false;
 
+  // new stuff
+  datasets : Array<Dataset> = []
+  
   ngOnInit() {
+    // TODO: Tutaj trzeba pobrać dane z serwisys
     this.userService.isAuthenticated.subscribe(
       (authenticated) => {
         this.isAuthenticated = authenticated;
 
         // set the article list accordingly
         if (authenticated) {
-          this.setListTo('feed');
+
+          this.dataSetService.getAll().subscribe(datasets => {
+            this.datasets = datasets
+          });
+
+          // this.setListTo('feed');
         } else {
-          this.setListTo('all');
+          // this.setListTo('all');
         }
       }
     );
 
-    this.tagsService.getAll()
-    .subscribe(tags => {
-      this.tags = tags;
-      this.tagsLoaded = true;
-    });
+    // this.tagsService.getAll()
+    // .subscribe(tags => {
+      // this.tags = tags;
+      // this.tagsLoaded = true;
+    // });
   }
 
   setListTo(type: string = '', filters: Object = {}) {

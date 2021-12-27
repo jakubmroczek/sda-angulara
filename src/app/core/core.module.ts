@@ -11,7 +11,8 @@ import {
   JwtService,
   ProfilesService,
   TagsService,
-  UserService
+  UserService,
+  DataSetService
 } from './services';
 
 @NgModule({
