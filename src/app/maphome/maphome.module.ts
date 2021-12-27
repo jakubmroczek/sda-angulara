@@ -4,12 +4,12 @@ import { RouterModule } from '@angular/router';
 import { MaphomeComponent } from './maphome.component';
 import { MaphomeAuthResolver } from './maphome-auth-resolver.service';
 import { SharedModule } from '../shared';
-import { HomeRoutingModule } from './maphome-routing.module';
+import { MaphomeRoutingModule } from './maphome-routing.module';
 
 @NgModule({
   imports: [
     SharedModule,
-    HomeRoutingModule
+    MaphomeRoutingModule
   ],
   declarations: [
     MaphomeComponent
