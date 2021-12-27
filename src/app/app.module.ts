@@ -12,9 +12,10 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { MaphomeComponent } from './maphome/maphome.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, SplashScreenComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, SplashScreenComponent, MaphomeComponent],
   imports: [
     BrowserModule,
     CoreModule,
