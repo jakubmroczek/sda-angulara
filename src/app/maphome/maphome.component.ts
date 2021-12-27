@@ -30,6 +30,9 @@ export class MaphomeComponent implements OnInit {
 
   // new stuff
   datasets : Array<Dataset> = []
+  heroes: String[] = [
+    'fo', 'bar,', 'muka', 'przykra'
+  ];
   
   ngOnInit() {
     // TODO: Tutaj trzeba pobrać dane z serwisys
