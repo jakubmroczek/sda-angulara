@@ -28,7 +28,8 @@ import {
     JwtService,
     ProfilesService,
     TagsService,
-    UserService
+    UserService,
+    DataSetService
   ],
   declarations: []
 })

@@ -5,11 +5,13 @@ import { Observable, of } from 'rxjs';
 // import { UserService } from '../core';
 import { take } from 'rxjs/operators';
 
+import { UserService } from '../core';
+
 @Injectable()
 export class MaphomeAuthResolver implements Resolve<boolean> {
   constructor(
     private router: Router,
-    private active: boolean = true
+    private userService: UserService
     // private userService: UserService
   ) {}
 
@@ -18,6 +20,6 @@ export class MaphomeAuthResolver implements Resolve<boolean> {
     state: RouterStateSnapshot
   ): Observable<boolean> {
     // return this.userService.isAuthenticated.pipe(take(1));
-    return of(this.active)
+    return of(true)
   }
 }

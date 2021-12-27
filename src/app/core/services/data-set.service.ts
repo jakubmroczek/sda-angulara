@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-// import { ApiService } from './api.service';
+import { ApiService } from './api.service';
 import { Dataset } from '../models';
 // import { map } from 'rxjs/operators';
 
@@ -9,9 +9,10 @@ import { Dataset } from '../models';
 @Injectable()
 export class DataSetService {
   constructor (
-      private data: Array<Dataset> = []
-    // private apiService: ApiService
+      private apiService: ApiService
   ) {}
+
+  private data: Array<Dataset> = []   
 
   getAll(): Observable<Array<Dataset>> {
       return of(this.data);
