@@ -7,10 +7,12 @@
       </div>
     </div>
 
+    <!-- TODO: Implement this so it looks cool -->
     <div>
+        <p>Your lovely dataset</p>
         <ul>
-            <li *ngFor="let hero of heroes">
-              {{ hero }}
+            <li *ngFor="let item of datasets ">
+              {{ item.id }}
             </li>
           </ul>
     </div>

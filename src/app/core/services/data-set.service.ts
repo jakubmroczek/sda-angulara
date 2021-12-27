@@ -12,7 +12,15 @@ export class DataSetService {
       private apiService: ApiService
   ) {}
 
-  private data: Array<Dataset> = []   
+  private data: Array<Dataset> = [
+    new Dataset("1234"),
+    new Dataset("salkdf"),
+    new Dataset("s_df"),
+    new Dataset("sa3fkdf"),
+    new Dataset("skdf"),
+    new Dataset("sa2df"),
+    new Dataset("salkf"),
+  ]
 
   getAll(): Observable<Array<Dataset>> {
       return of(this.data);

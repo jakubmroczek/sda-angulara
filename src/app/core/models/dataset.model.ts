@@ -1,3 +1,4 @@
-export interface Dataset {
-  id: string;
+//TODO: O co chodziz tym inteface?
+export class Dataset {
+  constructor(public id: string) {}
 }
