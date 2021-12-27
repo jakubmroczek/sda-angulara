@@ -37,7 +37,7 @@ export class MaphomeComponent implements OnInit {
         this.isAuthenticated = authenticated;
         //TODO: hehe
         authenticated = true
-        
+
         // set the article list accordingly
         if (authenticated) {
 
@@ -69,4 +69,12 @@ export class MaphomeComponent implements OnInit {
     // Otherwise, set the list object
     this.listConfig = {type: type, filters: filters};
   }
+
+  //TODO: Refactor
+  private filesToUpload: FileList | null = null;  
+
+  uploadDataSet(files: FileList) {
+    this.filesToUpload = files
+  }
+
 }
