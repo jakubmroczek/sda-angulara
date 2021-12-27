@@ -11,9 +11,10 @@ import {
 } from './shared';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, SplashScreenComponent],
   imports: [
     BrowserModule,
     CoreModule,
